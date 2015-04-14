@@ -29,7 +29,7 @@ app.use('/users', users);
 
 // connect to the database / require the other routes so they can use the views 
 var mongoose = require('mongoose');
-    mongoose.connect('mongodb://localhost/assgn-2');
+    mongoose.connect('mongodb://benjaminkearns:AmandaD1@ds061681.mongolab.com:61681/assgn-2');
 
     albums = require('./routes/albums');
     app.use('/', albums);
