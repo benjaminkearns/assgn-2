@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	h2 Albums
+
+	table(class='table')
+		thead
+			th Artwork
+			th Title
+			th Artist
+			th Price
+			th Label
+			th Notes
+
+		tbody
+			each album, i in albums
+				tr
+					td
+						a(href='albums/edit/#{album._id}') 
+							img(src='#{album.imgurl}' width='100' height='100' alt='#{album.notes}')
+					td 
+						a(href='albums/edit/#{album._id}') #{album.title}	
+					td #{album.artist}
+					td #{album.price}
+					td #{album.label}
+					td #{album.notes}

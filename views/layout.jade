@@ -1,0 +1,21 @@
+doctype html
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		header
+			h1
+				a(href='/') LifeSend
+			div.nav
+				a(href='/' title='home') Home
+				a(href='/albums' title='albums') Albums
+				a(href='/albums/add' title='add albums') Add an Album
+				a(href='/about' title='about us') About Us 
+		block content
+		footer
+			div.nav
+				a(href='/' title='home') Home
+				a(href='/albums' title='albums') Albums
+				a(href='/albums/add' title='add albums') Add an Album
+				a(href='/about' title='about us') About Us

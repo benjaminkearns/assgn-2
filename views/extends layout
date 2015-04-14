@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    div(class='container')
+        h2 Add a New Album
+        form(method='post', action='/albums/add', enctype='multipart/form-data')
+            div(class='col-lg-8 col-lg offset-2')
+                div(class='row control-group')
+                    label Title
+                    input(name='title', required, placeholder='title')
+                div(class='row control-group')
+                    label Artist
+                    input(name='artist', required, placeholder='artist')
+                div(class='row control-group')
+                    label Price
+                    input(name='price', required, placeholder='price', type='number')
+                div(class='row control-group')
+                    label Label
+                    input(name='label', required, placeholder='label')
+                div(class='row control-group')
+                    label Notes
+                    textarea(name='notes', required, placeholder='notes')
+                div(class='row control-group')
+                    label(for='upload') Choose a file
+                    input(type='file', name='upload')
+                input(type='submit', value='Add Album')

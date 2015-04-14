@@ -1,0 +1,30 @@
+﻿extends layout
+
+block content
+    div(class='container')
+        h2 #{album.title}
+        img(class='edit-img', src='#{album.imgurl}' alt='#{album.notes}')
+        form(method='post')
+            div(class='col-lg-8 col-lg offset-2')
+                div(class='row control-group')
+                    label Title
+                    input(name='title', required, placeholder='Title' value='#{album.title}')
+                div(class='row control-group')
+                    label Artist
+                    input(name='artist', required, placeholder='Artist' value='#{album.artist}')
+                div(class='row control-group')
+                    label Price
+                    input(name='price', required, placeholder='Price', type='number' value='#{album.price}')
+                div(class='row control-group')
+                    label Label
+                    input(name='label', required, placeholder='Label' value='#{album.label}')
+                div(class='row control-group')
+                    label Notes
+                    textarea(name='notes', required, placeholder='Notes') #{album.notes}
+                div(class='row control-group')
+                    label(for='upload') Choose a file
+                    input(type='file', name='upload')
+                input(type='hidden', name='id' value='#{album._id}')
+                input(class='save', type='submit', value='Save Changes')
+                a(class='delete' href='../delete/#{album._id}', title='Delete', onclick='return confirm(\'Are you sure you want to delete this album?\');') Delete
+                
