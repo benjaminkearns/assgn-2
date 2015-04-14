@@ -118,6 +118,26 @@ router.get('/api/albums', function(req,res,next){
 	});
 });
 
+router.get('/api/albums/:id', function(req,res,next){
+	var id = req.params.id;
+
+	var album = {
+		_id:req.body.id,
+		title: req.body.title,
+		artist: req.body.artist,
+		price: req.body.price,
+		label: req.body.label,
+		notes: req.body.notes
+	};
+	Album.findById(id, function (err,album) {
+		if(err) {
+			res.send(err);
+		} else {
+			res.send({album:album});
+		}
+	});
+});
+
 // GET - this bit deletes the album
 router.get('/albums/delete/:id', function (req,res,next) {
 	// stores the id in a variable
